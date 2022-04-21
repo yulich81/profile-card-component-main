@@ -1,0 +1,148 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Kumbh Sans',
+    sans-serif;
+  font-size: 18px;
+}
+
+:root {
+  --darkcyan: hsl(185, 75%, 39%);
+  --desaturatedblue: hsl(229, 23%, 23%);
+  --grayblue: hsl(227, 10%, 46%);
+  --darkgray: hsl(0, 0%, 59%);
+}
+
+
+/* main grid */
+
+.grid {
+  place-items: center;
+  height: 100vh;
+  background: var(--darkcyan);
+  background-image: url(./images/bg-pattern-top.svg),
+    url(./images/bg-pattern-bottom.svg);
+  background-position: right 50vw bottom 30vh,
+    left 50vw top 40vh;
+  background-repeat: no-repeat;
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr 400px 1fr;
+}
+
+.card {
+  grid-column: 2;
+  grid-row: 2;
+  width: 350px;
+  border-radius: 15px;
+  background: white;
+  color: var(--desaturatedblue);
+  box-shadow: 0px 20px 25px -5px rgba(34, 60, 80, 0.4);
+}
+
+/* typography */
+
+.text-gray {
+  color: var(--darkgray);
+  font-weight: 400;
+}
+
+.city {
+  font-size: 0.9rem;
+  padding-top: 0.5rem;
+}
+
+/* header */
+
+.header {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  grid-template-rows: 100px 1fr 1fr;
+  gap: 0;
+  justify-items: center;
+  align-items: center;
+  background: url(./images/bg-pattern-card.svg);
+  background-size: 100% 50%;
+  background-repeat: no-repeat;
+  border-bottom: 1px solid rgba(225, 225, 225, 0.6);
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.header__avatar {
+  grid-column: 2;
+  grid-row: 2;
+  border-radius: 50%;
+  border: 5px solid white;
+}
+
+.header__info {
+  grid-column: 2;
+  grid-row: 3;
+}
+
+.header__info__name {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+}
+
+.header__info__name h2 {
+  font-size: inherit;
+}
+
+/* stats */
+
+.card__data {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem 3rem;
+}
+
+.numbers {
+  font-weight: 700;
+}
+
+.span {
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  padding-top: 5px;
+}
+
+/* attribution */
+
+.footer {
+  grid-column: 2;
+  grid-row: 3;
+  align-self: start;
+  padding-top: 2rem;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  color: whitesmoke;
+}
+
+.attribution a {
+  color: darkblue;
+  font-weight: bold;
+}
+
+.attribution a:hover {
+  color: whitesmoke;
+}
+
+/* responsiveness */
+
+@media (max-width: 768px) {
+  .card {
+    min-width: 325px;
+    min-height: 375px;
+  }
+}
